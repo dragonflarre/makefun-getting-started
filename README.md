@@ -20,6 +20,7 @@
 - [Step 4 — Build the entry](#step-4--build-the-entry)
 - [Step 5 — Check locally, then submit](#step-5--check-locally-then-submit)
 - [Step 6 — Follow the result and claim](#step-6--follow-the-result-and-claim)
+- [Field notes: what the rules pages don't spell out](#field-notes-what-the-rules-pages-dont-spell-out)
 - [Let your agent drive the whole loop](#let-your-agent-drive-the-whole-loop)
 - [Your own referral link](#your-own-referral-link)
 - [Questions people actually ask](#questions-people-actually-ask)
@@ -144,6 +145,17 @@ node cli/makefun.mjs claim --claim <claim-id> \
 ```
 
 Answer `--us-person yes` if you are a US person. The reward is paid in USDC on Solana to your own wallet, after an automatic sanctions screen; a tax form is requested only where US law requires one.
+
+## Field notes: what the rules pages don't spell out
+
+These are the lessons that cost real entries their first attempt. None of them is hidden — they are all in the kits — but they are easy to skim past.
+
+- **Read the Transcripts section of `RULES.txt` before the first line of code.** Most bounties take a bundle assembled afterwards. A few require the session to be *recorded live* (`makefun record` running before the build starts). A build finished without the recorder running cannot be entered at all, and there is no honest way to reconstruct one.
+- **Always run `check` before `submit`.** A rejected entry still counts toward your daily submission limit (commonly 5 per day, 10 per bounty). The local check runs the same gates the server will, for free.
+- **Deadlines are UTC, and they are exact.** Convert them to your own timezone the day you start, and aim to submit hours early: grading queues and transcript bundles both take longer than you expect.
+- **Trial the exact artifact you commit.** If the entry is a program, run the final packed/committed version, not just the readable source — the two diverge more often than anyone admits, and only the committed bytes are graded.
+- **Keep the claim code.** `submit` prints a claim code once; `status` can show it again with your API key. Save it somewhere private. It is the receipt that ties a placed entry to your claim.
+- **A rejection is information, not a verdict.** The status names each failed gate and its fix. Most first entries need one fix-and-resubmit round; that is the normal loop, not a failure of the approach.
 
 ## Let your agent drive the whole loop
 
